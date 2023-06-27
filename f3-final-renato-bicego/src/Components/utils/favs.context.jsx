@@ -3,27 +3,29 @@ import { createContext, useReducer } from "react"
 export const ContextFavs = createContext()
 
 const getFavsFromStorage = () => {
-    const localData = localStorage.getItem('favs')
-    return localData ? JSON.parse(localData) : []
+  const localData = localStorage.getItem('favs')
+  return localData ? JSON.parse(localData) : []
 }
 
 const setFavsInStorage = (favs) => {
-    localStorage.setItem('favs', JSON.stringify(favs))
+
+  localStorage.setItem('favs', JSON.stringify(favs))
 }
 
 const reducer = (state, action) => {
+
   switch (action.type) {
     case "add_fav":
         const idAdd = action.payload
-        const newFavs = [...state.favs, idAdd]
+        const newFavs = [...state, idAdd]
         setFavsInStorage(newFavs)
-        return state
+        return newFavs
 
     case 'remove_fav':
         const idRemove = action.payload
-        const favsUpdated = state.favs.filter(fav => fav !== idRemove)
+        const favsUpdated = state.filter(fav => fav !== idRemove)
         setFavsInStorage(favsUpdated)
-        return state
+        return favsUpdated
     
     default:
       return state

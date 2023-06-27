@@ -7,6 +7,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Form from './Components/Form';
 import Home from './Routes/Home';
 import { FavsContextProvider } from './Components/utils/favs.context';
+import Detail from './Routes/Detail';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -19,6 +20,7 @@ root.render(
             <Route path='/' element={<App/>}>
               <Route path='/contacto' element={<Form />}/>
               <Route path='/home' element={<Home />} />
+              <Route path='/dentist/:id' element={<Detail />} />
             </Route>
           </Routes>
         </BrowserRouter>
