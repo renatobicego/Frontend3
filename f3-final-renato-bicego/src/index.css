@@ -75,10 +75,15 @@ form{
   display: flex;
   justify-content: space-around;
   flex-direction: column;
+  text-align: center;
   align-items: center;
   width: 200px;
   padding: 0.5rem 0.5rem 0 0.5rem;
   border: 0.5px solid rgb(136, 136, 136);
+}
+
+.card img {
+  width: 100%;
 }
 
 .card:hover{
@@ -146,9 +151,25 @@ header ul {
 }
 
 .dentist-details {
-  display: flex;
-  margin-right: auto;
+  width: 440px;
+  flex-direction: row;
   margin-left: auto;
-  flex-direction: column;
+  margin-right: auto;
+  gap: 10px;
+  padding: 10px;
+}
+
+.dentist-details img{
+  width: 200px;
+}
+
+.dentist-details div{
+  display: flex;
+  justify-content: space-evenly;
   align-items: center;
+  flex-direction: column;
+}
+
+.favs-msg {
+  text-align: center;
 }

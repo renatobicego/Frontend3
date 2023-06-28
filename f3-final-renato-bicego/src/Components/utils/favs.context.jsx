@@ -16,14 +16,14 @@ const reducer = (state, action) => {
 
   switch (action.type) {
     case "add_fav":
-        const idAdd = action.payload
-        const newFavs = [...state, idAdd]
+        const objAdd = action.payload
+        const newFavs = [...state, objAdd]
         setFavsInStorage(newFavs)
         return newFavs
 
     case 'remove_fav':
-        const idRemove = action.payload
-        const favsUpdated = state.filter(fav => fav !== idRemove)
+        const objRemove = action.payload
+        const favsUpdated = state.filter(fav => fav.id !== objRemove.id)
         setFavsInStorage(favsUpdated)
         return favsUpdated
     
@@ -39,8 +39,8 @@ export const FavsContextProvider = ({ children }) => {
   //Aqui deberan implementar la logica propia del Context, utilizando el hook useMemo
   const [favs, dispatch] = useReducer(reducer, {}, getFavsFromStorage)
 
-  const addFav = (id) => dispatch({type: 'add_fav', payload: id})
-  const removeFav = (id) => dispatch({type: 'remove_fav', payload: id})
+  const addFav = (dentist) => dispatch({type: 'add_fav', payload: dentist})
+  const removeFav = (dentist) => dispatch({type: 'remove_fav', payload: dentist})
 
   return (
     <ContextFavs.Provider value={

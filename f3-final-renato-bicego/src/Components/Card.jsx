@@ -9,28 +9,29 @@ const Card = ({ dentist }) => {
   const {favs, addFav, removeFav} = useContext(ContextFavs)
 
   const addFavDentist = () => {
-    addFav(dentist.id)
+    addFav(dentist)
   }
 
   const removeFavDentist = () => {
-    removeFav(dentist.id)
+    removeFav(dentist)
   }
 
   return (
     <div className={`card ${themeDark && 'dark'}`}>
+      <img src="/images/doctor.jpg" alt="" />
 
-        <a href={`/dentist/${dentist.id}`}>
-          <h3>{dentist.name}</h3>
-          <h4>{dentist.username}</h4>
-          <h4>{dentist.id}</h4>
 
-        </a>
+      <a href={`/dentist/${dentist.id}`}>
+        <h3>{dentist.name}</h3>
+        <h4>{dentist.username}</h4>
 
-        {favs.includes(dentist.id) ? 
-          <button onClick={removeFavDentist} className="favButton">Remove fav</button>
-          :
-          <button onClick={addFavDentist} className="favButton">Add fav</button>
-        }
+      </a>
+
+      {favs.includes(dentist) ? 
+        <button onClick={removeFavDentist} className="favButton">Remove fav</button>
+        :
+        <button onClick={addFavDentist} className="favButton">Add fav</button>
+      }
         
     </div>
   );
