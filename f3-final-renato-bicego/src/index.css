@@ -92,7 +92,7 @@ form{
 
 .card-grid{
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   gap: 1rem;
   width: 90vw;
   height: auto;
@@ -128,7 +128,7 @@ tr:nth-child(even) {
   background-color: #12121296;
   color: white;
 }
-.dark > a, .dark > button, .dark > li {
+.dark  a, .dark  button, .dark  li {
   color: white !important;
 }
 
