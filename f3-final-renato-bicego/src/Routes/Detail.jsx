@@ -18,12 +18,14 @@ const Detail = () => {
   return (
     <>
       <h1>Detail Dentist {id} </h1>
-      <div className='dentist-details'>
-        <h3>{dentist.name}</h3>
-        <h4>{dentist.email}</h4>
-        <h4>{dentist.phone}</h4>
-        <a href={dentist.website}>{dentist.website}</a>
-
+      <div className='card dentist-details'>
+        <img src="/images/doctor.jpg" alt="" />
+        <div>
+          <h3>{dentist.name}</h3>
+          <h4>{dentist.email}</h4>
+          <h4>{dentist.phone}</h4>
+          <a href={dentist.website}>{dentist.website}</a>
+        </div>
       </div>
     </>
   )
