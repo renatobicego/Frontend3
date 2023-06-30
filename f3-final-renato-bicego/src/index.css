@@ -13,9 +13,10 @@ code {
 }
 .favButton{
   background-color: rgba(136, 136, 136, 0.116);
-  padding: 10px;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  border-radius: 15px;
   border: none;
-  width: 100%;
   cursor: pointer;
 }
 
@@ -78,6 +79,7 @@ form{
   text-align: center;
   align-items: center;
   width: 200px;
+  border-radius: 15px;
   padding: 0.5rem 0.5rem 0 0.5rem;
   border: 0.5px solid rgb(136, 136, 136);
 }
@@ -92,7 +94,7 @@ form{
 
 .card-grid{
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-evenly;
   gap: 1rem;
   width: 90vw;
   height: auto;
@@ -122,6 +124,7 @@ tr:nth-child(even) {
 .themeButton {
   padding: 10px 15px;
   border: none;
+  border-radius: 15px;
 }
 
 .dark{
@@ -172,4 +175,8 @@ header ul {
 
 .favs-msg {
   text-align: center;
+}
+
+main {
+  padding: 20px;
 }

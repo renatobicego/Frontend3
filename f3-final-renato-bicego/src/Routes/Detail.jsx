@@ -7,7 +7,6 @@ import { useParams } from 'react-router-dom'
 const Detail = () => {
   const [dentist, setDentist] = useState({})
   const {id} = useParams()
-  console.log(dentist)
 
   useEffect(() => {
     fetch(`https://jsonplaceholder.typicode.com/users/${id}`)

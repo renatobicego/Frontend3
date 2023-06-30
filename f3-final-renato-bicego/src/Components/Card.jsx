@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
 import { ContextGlobal } from "./utils/global.context";
 import { ContextFavs } from "./utils/favs.context";
-
+import {HeartIcon as Heart}  from '@heroicons/react/24/outline'
+import {HeartIcon as HeartFull}  from '@heroicons/react/24/solid'
 
 const Card = ({ dentist }) => {
 
@@ -16,6 +17,7 @@ const Card = ({ dentist }) => {
     removeFav(dentist)
   }
 
+
   return (
     <div className={`card ${themeDark && 'dark'}`}>
       <img src="/images/doctor.jpg" alt="" />
@@ -27,10 +29,11 @@ const Card = ({ dentist }) => {
 
       </a>
 
-      {favs.includes(dentist) ? 
-        <button onClick={removeFavDentist} className="favButton">Remove fav</button>
+      {favs.some(fav => fav.id === dentist.id) ? 
+        
+        <button onClick={removeFavDentist} className="favButton"><HeartFull style={{'width': '20px'}} strokeWidth={2}/></button>
         :
-        <button onClick={addFavDentist} className="favButton">Add fav</button>
+        <button onClick={addFavDentist} className="favButton"><Heart style={{'width': '20px'}} strokeWidth={2}/></button>
       }
         
     </div>
